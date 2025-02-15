@@ -3,7 +3,10 @@ import { RegisterRequest } from "../../interfaces/http/request/auth.ts";
 import { AuthServiceImpl } from "../../services/auth/index.ts";
 import { HTTPException } from "hono/http-exception";
 
-const register = async (c: Context, service: AuthServiceImpl): Promise<Response> => {
+const registerHandler = async (
+  c: Context,
+  service: AuthServiceImpl,
+): Promise<Response> => {
   const body = await c.req.json();
   const req = body as RegisterRequest;
 
@@ -32,4 +35,4 @@ const register = async (c: Context, service: AuthServiceImpl): Promise<Response>
   }
 };
 
-export default register;
+export default registerHandler;

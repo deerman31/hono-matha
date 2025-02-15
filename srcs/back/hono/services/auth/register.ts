@@ -9,7 +9,7 @@ enum DuplicateError {
   None = "",
 }
 
-export const register = async (pool: Pool, req: RegisterRequest) => {
+const registerService = async (pool: Pool, req: RegisterRequest) => {
   const client = await pool.connect();
 
   try {
@@ -116,3 +116,5 @@ const checkDuplicateUserCredentials = async (
     return DuplicateError.None;
   }
 };
+
+export default registerService;

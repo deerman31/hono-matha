@@ -8,11 +8,6 @@ const authRouter = (pool: Pool): Hono => {
 
   const handler = newAuthHandler(newAuthService(pool));
 
-  auth.get("/", (c) => {
-    console.log("auth hello----------");
-    return c.text("Hello auth!");
-  });
-
   auth.post("/register", (c) => handler.register(c));
 
   return auth;

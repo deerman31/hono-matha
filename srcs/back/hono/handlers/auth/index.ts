@@ -1,6 +1,6 @@
 import { AuthHandler } from "../../interfaces/handlers/auth.ts";
 import { AuthServiceImpl } from "../../services/auth/index.ts";
-import register from "./register.ts";
+import registerHandler from "./register.ts";
 import { Context } from "hono";
 
 export class AuthHanderImpl implements AuthHandler {
@@ -12,7 +12,7 @@ export class AuthHanderImpl implements AuthHandler {
 
   // このメソッドをインスタンスメソッドとして定義
   register = async (c: Context): Promise<Response> => {
-    return await register(c, this.service);
+    return await registerHandler(c, this.service);
   };
 }
 

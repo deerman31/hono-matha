@@ -7,11 +7,7 @@ const createRouter = (pool: Pool) => {
   const app = new Hono();
   const api = new Hono();
 
-  // データベース接続のテスト用エンドポイント
-  api.get("/db-test", dbTest(pool));
-
   api.get("/", (c) => {
-    console.log("hello----------");
     return c.text("Hello Hono!");
   });
 
