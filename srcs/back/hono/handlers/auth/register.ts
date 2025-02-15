@@ -1,5 +1,5 @@
 import { Context } from "hono";
-import { RegisterRequest } from "../../interfaces/http/request/auth.ts";
+import { RegisterRequest } from "../../interfaces/dto/auth.ts";
 import { AuthServiceImpl } from "../../services/auth/index.ts";
 import { HTTPException } from "hono/http-exception";
 

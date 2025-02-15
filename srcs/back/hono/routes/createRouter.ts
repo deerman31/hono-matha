@@ -1,6 +1,5 @@
 import { Hono } from "hono";
 import { Pool } from "https://deno.land/x/postgres@v0.19.3/mod.ts";
-import dbTest from "./dbTest.ts";
 import authRouter from "./auth.ts";
 
 const createRouter = (pool: Pool) => {

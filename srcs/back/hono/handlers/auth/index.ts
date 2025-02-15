@@ -3,7 +3,7 @@ import { AuthServiceImpl } from "../../services/auth/index.ts";
 import registerHandler from "./register.ts";
 import { Context } from "hono";
 
-export class AuthHanderImpl implements AuthHandler {
+export class AuthHandlerImpl implements AuthHandler {
   service: AuthServiceImpl;
 
   constructor(service: AuthServiceImpl) {
@@ -15,7 +15,3 @@ export class AuthHanderImpl implements AuthHandler {
     return await registerHandler(c, this.service);
   };
 }
-
-export const newAuthHandler = (service: AuthServiceImpl): AuthHanderImpl => {
-  return new AuthHanderImpl(service);
-};
