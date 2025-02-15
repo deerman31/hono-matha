@@ -2,6 +2,8 @@ import { Pool } from "https://deno.land/x/postgres/mod.ts";
 import { Context } from "hono";
 
 const dbTest = (pool: Pool) => async (c: Context) => {
+  console.log("dbTest----------");
+
   const client = await pool.connect();
   try {
     const result = await client.queryArray("SELECT * FROM users;");
